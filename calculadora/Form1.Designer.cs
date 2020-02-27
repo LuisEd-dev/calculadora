@@ -51,6 +51,8 @@
             this.button20 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -59,9 +61,10 @@
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox1.Size = new System.Drawing.Size(162, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button1
             // 
@@ -245,7 +248,7 @@
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(280, 38);
+            this.button19.Location = new System.Drawing.Point(280, 12);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(50, 50);
             this.button19.TabIndex = 19;
@@ -255,7 +258,7 @@
             // 
             // button20
             // 
-            this.button20.Location = new System.Drawing.Point(280, 94);
+            this.button20.Location = new System.Drawing.Point(280, 68);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(50, 50);
             this.button20.TabIndex = 20;
@@ -265,7 +268,7 @@
             // 
             // button21
             // 
-            this.button21.Location = new System.Drawing.Point(280, 150);
+            this.button21.Location = new System.Drawing.Point(280, 124);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(50, 50);
             this.button21.TabIndex = 21;
@@ -283,11 +286,33 @@
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(280, 180);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(50, 50);
+            this.button23.TabIndex = 23;
+            this.button23.Text = "M+";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(280, 236);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(50, 50);
+            this.button24.TabIndex = 24;
+            this.button24.Text = "M-";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 288);
+            this.ClientSize = new System.Drawing.Size(345, 288);
+            this.Controls.Add(this.button24);
+            this.Controls.Add(this.button23);
             this.Controls.Add(this.button22);
             this.Controls.Add(this.button21);
             this.Controls.Add(this.button20);
@@ -345,6 +370,8 @@
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button24;
     }
 }
 

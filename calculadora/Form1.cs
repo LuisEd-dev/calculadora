@@ -198,6 +198,7 @@ namespace calculadora
         {
             StreamReader mr = new StreamReader("ms.txt");
             textBox1.Text = mr.ReadLine();
+            mr.Close();
         }
 
         private void button21_Click(object sender, EventArgs e)
@@ -205,6 +206,42 @@ namespace calculadora
             StreamWriter mc = new StreamWriter("ms.txt");
             mc.Flush();
             mc.Close();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader mr = new StreamReader("ms.txt");
+                Double valor = Convert.ToDouble(mr.ReadLine());
+                mr.Close();
+                valor = valor + Convert.ToDouble(textBox1.Text);
+                StreamWriter ms = new StreamWriter("ms.txt");
+                ms.WriteLine(valor);
+                ms.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Preencha o campo corretamente!");
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader mr = new StreamReader("ms.txt");
+                Double valor = Convert.ToDouble(mr.ReadLine());
+                mr.Close();
+                valor = valor - Convert.ToDouble(textBox1.Text);
+                StreamWriter ms = new StreamWriter("ms.txt");
+                ms.WriteLine(valor);
+                ms.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Preencha o campo corretamente!");
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
