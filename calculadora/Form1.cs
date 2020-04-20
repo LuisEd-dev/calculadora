@@ -17,31 +17,9 @@ namespace calculadora
         {
             InitializeComponent();
         }
-        string op;
-        double n1, n2;
-        private double conta(string op, double n1, double n2)
-        {
-            if (op == "soma")
-            {
-                return (n1 + n2);
-            }
-            else if (op == "sub")
-            {
-                return (n1 - n2);
-            }
-            else if (op == "mult")
-            {
-                return (n1 * n2);
-            }
-            else if (op == "div")
-            {
-                return (n1 / n2);
-            } else
-            {
-                return 0;
-            }
-            
-        }
+
+        operacoes referencia = new operacoes();
+
         private void opcoes()
         {
             if (this.Width < 300)
@@ -51,7 +29,7 @@ namespace calculadora
             } else
             {
                 button18.Text = ">";
-                this.Width = 270;
+                this.Width = 286;
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -117,11 +95,9 @@ namespace calculadora
         {
             try
             {
-                op = "soma";
-                n1 = Convert.ToDouble(textBox1.Text);
+                referencia.soma(textBox1.Text);
                 textBox1.Text = null;
-            }
-            catch
+            } catch
             {
                 MessageBox.Show("Preencha o campo corretamente!");
             }
@@ -132,8 +108,7 @@ namespace calculadora
         {
             try
             {
-                op = "sub";
-                n1 = Convert.ToDouble(textBox1.Text);
+                referencia.sub(textBox1.Text);
                 textBox1.Text = null;
             }
             catch
@@ -146,8 +121,7 @@ namespace calculadora
         {
             try
             {
-                op = "mult";
-                n1 = Convert.ToDouble(textBox1.Text);
+                referencia.mult(textBox1.Text);
                 textBox1.Text = null;
             }
             catch
@@ -160,8 +134,7 @@ namespace calculadora
         {
             try
             {
-                op = "div";
-                n1 = Convert.ToDouble(textBox1.Text);
+                referencia.div(textBox1.Text);
                 textBox1.Text = null;
             }
             catch
@@ -189,36 +162,25 @@ namespace calculadora
 
         private void button19_Click(object sender, EventArgs e)
         {
-            StreamWriter ms = new StreamWriter("ms.txt");
-            ms.WriteLine(textBox1.Text);
-            ms.Close();
+            referencia.ms(textBox1.Text);
+            
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
-            StreamReader mr = new StreamReader("ms.txt");
-            textBox1.Text = mr.ReadLine();
-            mr.Close();
+            textBox1.Text = referencia.mr();
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-            StreamWriter mc = new StreamWriter("ms.txt");
-            mc.Flush();
-            mc.Close();
+            referencia.mc();
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
             try
             {
-                StreamReader mr = new StreamReader("ms.txt");
-                Double valor = Convert.ToDouble(mr.ReadLine());
-                mr.Close();
-                valor = valor + Convert.ToDouble(textBox1.Text);
-                StreamWriter ms = new StreamWriter("ms.txt");
-                ms.WriteLine(valor);
-                ms.Close();
+                referencia.mmais(textBox1.Text);
             }
             catch
             {
@@ -230,13 +192,7 @@ namespace calculadora
         {
             try
             {
-                StreamReader mr = new StreamReader("ms.txt");
-                Double valor = Convert.ToDouble(mr.ReadLine());
-                mr.Close();
-                valor = valor - Convert.ToDouble(textBox1.Text);
-                StreamWriter ms = new StreamWriter("ms.txt");
-                ms.WriteLine(valor);
-                ms.Close();
+                referencia.mmenos(textBox1.Text);
             }
             catch
             {
@@ -248,8 +204,7 @@ namespace calculadora
         {
             try
             {
-                n2 = Convert.ToDouble(textBox1.Text);
-                textBox1.Text = Convert.ToString(conta(op, n1, n2));
+                textBox1.Text = referencia.igual(textBox1.Text);
             }
             catch
             {
