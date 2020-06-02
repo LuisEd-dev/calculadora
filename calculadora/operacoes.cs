@@ -80,7 +80,7 @@ namespace calculadora
             mc.Flush();
             mc.Close();
         }
-        public void mmais(String textbox)
+        public String mmais(String textbox)
         {
             StreamReader mr = new StreamReader("ms.txt");
             Double valor = Convert.ToDouble(mr.ReadLine());
@@ -89,8 +89,12 @@ namespace calculadora
             StreamWriter ms = new StreamWriter("ms.txt");
             ms.WriteLine(valor);
             ms.Close();
+            mr = new StreamReader("ms.txt");
+            String readline = mr.ReadLine();
+            mr.Close();
+            return readline;
         }
-        public void mmenos(String textbox)
+        public String mmenos(String textbox)
         {
             StreamReader mr = new StreamReader("ms.txt");
             Double valor = Convert.ToDouble(mr.ReadLine());
@@ -99,6 +103,10 @@ namespace calculadora
             StreamWriter ms = new StreamWriter("ms.txt");
             ms.WriteLine(valor);
             ms.Close();
+            mr = new StreamReader("ms.txt");
+            String readline = mr.ReadLine();
+            mr.Close();
+            return readline;
         }
 
     }

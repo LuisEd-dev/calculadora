@@ -180,7 +180,7 @@ namespace calculadora
         {
             try
             {
-                referencia.mmais(textBox1.Text);
+                textBox1.Text = referencia.mmais(textBox1.Text);
             }
             catch
             {
@@ -192,7 +192,7 @@ namespace calculadora
         {
             try
             {
-                referencia.mmenos(textBox1.Text);
+                textBox1.Text =  referencia.mmenos(textBox1.Text);
             }
             catch
             {
@@ -204,7 +204,9 @@ namespace calculadora
         {
             try
             {
-                textBox1.Text = referencia.igual(textBox1.Text);
+                if (textBox1.Text != "0") { textBox1.Text = referencia.igual(textBox1.Text); }
+                else { MessageBox.Show("Não Divida Por 0!"); textBox1.Text = ""; }
+                
             }
             catch
             {
