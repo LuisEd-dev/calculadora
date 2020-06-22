@@ -19,7 +19,7 @@ namespace calculadora
         }
 
         operacoes referencia = new operacoes();
-
+        int virgula = 0;
         private void opcoes()
         {
             if (this.Width < 300)
@@ -83,7 +83,12 @@ namespace calculadora
         }
         private void button22_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + button22.Text;
+            if (virgula == 0)
+            {
+                textBox1.Text = textBox1.Text + button22.Text;
+                virgula = 1;
+            }
+            
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -97,6 +102,7 @@ namespace calculadora
             {
                 referencia.soma(textBox1.Text);
                 textBox1.Text = null;
+                virgula = 0;
             } catch
             {
                 MessageBox.Show("Preencha o campo corretamente!");
@@ -110,10 +116,11 @@ namespace calculadora
             {
                 referencia.sub(textBox1.Text);
                 textBox1.Text = null;
+                virgula = 0;
             }
             catch
             {
-                MessageBox.Show("Preencha o campo corretamente!");
+                textBox1.Text += button13.Text; 
             }
         }
 
@@ -123,6 +130,7 @@ namespace calculadora
             {
                 referencia.mult(textBox1.Text);
                 textBox1.Text = null;
+                virgula = 0;
             }
             catch
             {
@@ -136,6 +144,7 @@ namespace calculadora
             {
                 referencia.div(textBox1.Text);
                 textBox1.Text = null;
+                virgula = 0;
             }
             catch
             {
@@ -206,7 +215,7 @@ namespace calculadora
             {
                 if (textBox1.Text != "0") { textBox1.Text = referencia.igual(textBox1.Text); }
                 else { MessageBox.Show("Não Divida Por 0!"); textBox1.Text = ""; }
-                
+                virgula = 0;
             }
             catch
             {
