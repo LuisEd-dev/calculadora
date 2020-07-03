@@ -10,7 +10,7 @@ namespace calculadora
     class operacoes
     {
         public String op;
-        public Double n1, n2;
+        public Double n1;
 
         private double conta(string op, double n1, double n2)
         {
